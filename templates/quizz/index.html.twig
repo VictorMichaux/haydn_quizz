@@ -1,0 +1,32 @@
+{% extends 'quizz-base.html.twig' %}
+
+{% block title %}Index des questions{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row mt centered ">
+            <div class="col-lg-4 col-lg-offset-4">
+                <h3>Voici les questions</h3>
+                <hr>
+                <p>Une nouvelle apparaître chaque jour</p>
+            </div>
+        </div>
+        <!-- /row -->
+        <div class="row mt centered">
+            {% for question in questions %}
+                <div class="col-lg-4 desc">
+                    <a class="b-link-fade b-animate-go" href="{{ path('question', {id: question.id}) }}"><img width="350" src="{{ asset('uploads/images/interrogation.png') }}" alt="" />
+                        <div class="b-wrapper">
+                            <h4 class="b-from-left b-animate b-delay03">Question n°{{ question.id }}</h4>
+                            <p class="b-from-right b-animate b-delay03">{{ question.availableAt|date('d/m/Y') }}</p>
+                        </div>
+                    </a>
+                    <p>RÉSOLUE - <i class="fa fa-{% if question.isResolved == true %}check{% else %}times{% endif %}"></i></p>
+                </div>
+            {% endfor %}
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+
+{% endblock %}

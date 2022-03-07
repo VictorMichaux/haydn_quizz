@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue !{% endblock %}
+
+{% block body %}
+    <div id="headerwrap" style="
+    min-height: 100vh;
+    padding-top: 25vh;
+">
+        <div class="container">
+            <div class="row centered">
+                <div class="col-lg-8 col-lg-offset-2 mt">
+                    <h1 class="animation slideDown">Bienvenue Petit Doun.</h1>
+                    <h2 class="animation slideDown">Pour jouer, connecte toi en cliquant sur le bouton.</h2>
+                    <p class="mt"><a href="{{ path('app_login') }}" type="button" class="btn btn-cta btn-lg">Ici mon Babyno</a></p>
+                </div>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /headerwrap -->
+{% endblock %}

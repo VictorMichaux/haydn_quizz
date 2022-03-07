@@ -1,0 +1,26 @@
+{% extends 'quizz-base.html.twig' %}
+
+{% block title %}Bravo!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row mt centered ">
+            <div class="col-lg-8 col-lg-offset-2">
+                {% for message in app.flashes('success') %}
+                    <div class="alert alert-success">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+                <h3>{{ reward.reward }}</h3>
+                <hr>
+                <img src="{{ asset('uploads/images/' ~ reward.picture) }}" style="max-height: 800px; max-width: 100%" alt="">
+                <br>
+                <br>
+                <a href="{{ path('quizz') }}" type="button" class="btn btn-theme btn-lg">Retour aux questions</a>
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+
+{% endblock %}
